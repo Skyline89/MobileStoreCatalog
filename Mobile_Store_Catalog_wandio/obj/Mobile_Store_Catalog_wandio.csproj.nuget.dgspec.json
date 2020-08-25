@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DESKTOP.GE\\source\\repos\\Mobile_Store_Catalog_wandio\\Mobile_Store_Catalog_wandio\\Mobile_Store_Catalog_wandio.csproj": {}
+    "C:\\Users\\amesarkishvili\\Desktop\\Wandio\\MobileStoreCatalog\\Mobile_Store_Catalog_wandio\\Mobile_Store_Catalog_wandio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DESKTOP.GE\\source\\repos\\Mobile_Store_Catalog_wandio\\Mobile_Store_Catalog_wandio\\Mobile_Store_Catalog_wandio.csproj": {
+    "C:\\Users\\amesarkishvili\\Desktop\\Wandio\\MobileStoreCatalog\\Mobile_Store_Catalog_wandio\\Mobile_Store_Catalog_wandio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DESKTOP.GE\\source\\repos\\Mobile_Store_Catalog_wandio\\Mobile_Store_Catalog_wandio\\Mobile_Store_Catalog_wandio.csproj",
+        "projectUniqueName": "C:\\Users\\amesarkishvili\\Desktop\\Wandio\\MobileStoreCatalog\\Mobile_Store_Catalog_wandio\\Mobile_Store_Catalog_wandio.csproj",
         "projectName": "Mobile_Store_Catalog_wandio",
-        "projectPath": "C:\\Users\\DESKTOP.GE\\source\\repos\\Mobile_Store_Catalog_wandio\\Mobile_Store_Catalog_wandio\\Mobile_Store_Catalog_wandio.csproj",
-        "packagesPath": "C:\\Users\\DESKTOP.GE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DESKTOP.GE\\source\\repos\\Mobile_Store_Catalog_wandio\\Mobile_Store_Catalog_wandio\\obj\\",
+        "projectPath": "C:\\Users\\amesarkishvili\\Desktop\\Wandio\\MobileStoreCatalog\\Mobile_Store_Catalog_wandio\\Mobile_Store_Catalog_wandio.csproj",
+        "packagesPath": "C:\\Users\\amesarkishvili\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\amesarkishvili\\Desktop\\Wandio\\MobileStoreCatalog\\Mobile_Store_Catalog_wandio\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\DESKTOP.GE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\amesarkishvili\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,6 +63,10 @@
               "target": "Package",
               "version": "[3.1.7, )"
             },
+            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -77,12 +84,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -91,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

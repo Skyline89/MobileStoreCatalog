@@ -10,7 +10,10 @@ namespace Mobile_Store_Catalog_wandio.Models
     {
         [Key]
         public int ManufactorId { get; set; }
+        [Required]
+        [StringLength(100)]
         public string ManufactorName { get; set; }
+        [Required]
         public virtual ICollection<Phone> Phones { get; set; }
     }
 }

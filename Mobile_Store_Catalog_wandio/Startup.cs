@@ -1,29 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Mobile_Store_Catalog_wandio.Data;
 using Mobile_Store_Catalog_wandio.Models;
-using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace Mobile_Store_Catalog_wandio
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment environment)
+        public Startup(IConfiguration configuration)
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(environment.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true)
-                .AddJsonFile($"appsettings.{environment.EnvironmentName}.json")
-                .AddEnvironmentVariables();
-            Configuration = builder.Build();
+            Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
@@ -31,12 +22,13 @@ namespace Mobile_Store_Catalog_wandio
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<MobileStoreCatalogContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
-            services.AddControllersWithViews();
+            
+            services.AddDbContext<MobileStoreCatalogContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, MobileStoreCatalogContext db)
         {
             if (env.IsDevelopment())
             {
@@ -48,6 +40,7 @@ namespace Mobile_Store_Catalog_wandio
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            db.Database.EnsureCreated();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -59,7 +52,7 @@ namespace Mobile_Store_Catalog_wandio
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Catalog}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

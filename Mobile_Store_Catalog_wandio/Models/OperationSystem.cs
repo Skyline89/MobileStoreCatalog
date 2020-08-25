@@ -10,7 +10,9 @@ namespace Mobile_Store_Catalog_wandio.Models
     {
         [Key]
         public int OperationSystemId { get; set; }
-        public int OperationSystemName { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string OperationSystemName { get; set; }
         public virtual ICollection<Phone> Phones { get; set; }
     }
 }
