@@ -34,7 +34,7 @@ namespace Mobile_Store_Catalog_wandio.Models
         [StringLength(100)]
         public string Processor { get; set; }
         [Required]
-        public int Memory { get; set; }
+        public string Memory { get; set; }
         [Required]
         [StringLength(255)]
         public string VideoPath { get; set; }
