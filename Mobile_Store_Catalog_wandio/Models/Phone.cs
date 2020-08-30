@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Infrastructure.Design;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -34,7 +33,7 @@ namespace Mobile_Store_Catalog_wandio.Models
         [StringLength(100)]
         public string Processor { get; set; }
         [Required]
-        public int Memory { get; set; }
+        public string Memory { get; set; }
         [Required]
         [StringLength(255)]
         public string VideoPath { get; set; }
