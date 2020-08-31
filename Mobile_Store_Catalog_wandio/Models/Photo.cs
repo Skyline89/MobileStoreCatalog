@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -17,5 +19,9 @@ namespace Mobile_Store_Catalog_wandio.Models
         [StringLength(255)]
         [Required]
         public string PhotoPath { get; set; }
+        public byte[] PhotoData { get; set; }
+        [NotMapped]
+        [DisplayName("Upload Photo")]
+        public IFormFile PhotoFile { get; set; }
     }
 }

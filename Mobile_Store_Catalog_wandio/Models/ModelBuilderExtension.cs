@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -298,13 +299,6 @@ namespace Mobile_Store_Catalog_wandio.Models
                     VideoPath = @"F:\PhoneVideos\HuaweiP30"
                 }
             );
-            modelBuilder.Entity<Photo>().HasData(
-                new Photo
-                {
-                    PhotoId = 1,
-                    PhoneId = 1,
-                    PhotoPath = @"F:\PhonePhotos\Iphone5_1"
-                });
         }
     }
 }
